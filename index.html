@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>王现永 | AI 产品工程师学习中</title>
+  <meta name="description" content="去哪儿酒店 PM，12 周从产品经理转型 AI 产品工程师，每周公开复盘" />
+  <meta name="keywords" content="王现永, AI产品工程师, 产品经理, 去哪儿, 酒店, 12周学习, 作品集, PM转型" />
+  <meta name="author" content="王现永" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath fill='%23ffffff' d='M16 7.5 9.5 10.8v12.4l6.5-3.2 6.5 3.2V10.8L16 7.5z'/%3E%3Cpath fill='%23ffffff' fill-opacity='.4' d='M16 7.5l6.5 3.3v12.4L16 20V7.5z'/%3E%3Cpath stroke='%236366f1' stroke-width='.8' d='M16 10v10'/%3E%3Ccircle cx='24.5' cy='7.5' r='2.8' fill='%2334d399'/%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath fill='%23ffffff' d='M16 7.5 9.5 10.8v12.4l6.5-3.2 6.5 3.2V10.8L16 7.5z'/%3E%3Cpath fill='%23ffffff' fill-opacity='.4' d='M16 7.5l6.5 3.3v12.4L16 20V7.5z'/%3E%3Cpath stroke='%236366f1' stroke-width='.8' d='M16 10v10'/%3E%3Ccircle cx='24.5' cy='7.5' r='2.8' fill='%2334d399'/%3E%3C/svg%3E" />
+  <meta property="og:title" content="王现永 | AI 产品工程师学习中" />
+  <meta property="og:description" content="去哪儿酒店 PM，12 周从产品经理转型 AI 产品工程师，每周公开复盘" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://xianyong-wang.vercel.app" />
+  <meta property="og:image" content="https://xianyong-wang.vercel.app/og.png" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="王现永 | AI 产品工程师学习中" />
+  <meta name="twitter:description" content="去哪儿酒店 PM，12 周从产品经理转型 AI 产品工程师，每周公开复盘" />
+  <meta name="twitter:image" content="https://xianyong-wang.vercel.app/og.png" />
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme');
+      if (t === 'light') document.documentElement.classList.remove('dark');
+      else document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    }
+    .hero-glow {
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent);
+    }
+    html.dark .hero-glow {
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent);
+    }
+    .card-shine {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, transparent 50%);
+    }
+    html.dark .card-shine {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+    }
+    .week-card { cursor: pointer; text-align: left; width: 100%; }
+    .week-card:focus-visible { outline: 2px solid rgb(99 102 241); outline-offset: 2px; }
+    #modal:not(.hidden) { display: flex; }
+  </style>
+</head>
+<body class="bg-zinc-50 text-zinc-700 antialiased selection:bg-indigo-500/20 selection:text-indigo-900 dark:bg-[#0a0a0f] dark:text-zinc-300 dark:selection:bg-indigo-500/30 dark:selection:text-white">
+
+  <!-- Background -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute inset-0 bg-zinc-50 dark:bg-[#0a0a0f]"></div>
+    <div class="absolute inset-0 opacity-[0.35] dark:opacity-[0.03]" style="background-image: linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.06) 1px, transparent 1px); background-size: 64px 64px;"></div>
+    <div class="hero-glow absolute inset-0"></div>
+  </div>
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/80 backdrop-blur-xl dark:border-white/5 dark:bg-[#0a0a0f]/80">
+    <nav class="mx-auto flex max-w-5xl items-center justify-end gap-4 px-6 py-4">
+      <div class="flex gap-6 text-sm text-zinc-500 dark:text-zinc-400">
+        <a href="#about" class="transition hover:text-zinc-900 dark:hover:text-white">About</a>
+        <a href="#progress" class="transition hover:text-zinc-900 dark:hover:text-white">Progress</a>
+        <a href="#contact" class="transition hover:text-zinc-900 dark:hover:text-white">Contact</a>
+      </div>
+      <button id="theme-toggle" type="button" aria-label="切换浅色/深色主题" class="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-200 bg-zinc-100 text-zinc-600 transition hover:bg-zinc-200 dark:border-white/10 dark:bg-white/5 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-white">
+        <svg id="icon-sun" class="hidden h-4 w-4 dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        <svg id="icon-moon" class="h-4 w-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-5xl px-6">
+
+    <!-- Hero -->
+    <section class="flex min-h-[50vh] flex-col justify-center py-12 md:py-16">
+      <p class="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs text-zinc-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-zinc-400 dark:shadow-none">
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse dark:bg-emerald-400"></span>
+        12 周学习计划 · 自 2026-05-27
+      </p>
+      <h1 class="text-5xl font-bold tracking-tight text-zinc-900 sm:text-6xl md:text-7xl dark:text-white">
+        Xianyong Wang
+      </h1>
+      <p class="mt-4 max-w-xl text-lg text-zinc-600 sm:text-xl dark:text-zinc-400">
+        PM × AI 产品工程师 <span class="text-zinc-400 dark:text-zinc-500">学习中</span>
+      </p>
+      <p class="mt-6 max-w-lg text-sm leading-relaxed text-zinc-500">
+        去哪儿 · 酒店方向产品经理 · 目标 AI 工程师与 AI+ 创新产品
+      </p>
+      <div class="mt-10 flex flex-wrap gap-3">
+        <a href="#progress" class="rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-lg transition hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100">
+          查看学习进度
+        </a>
+        <a href="#contact" class="rounded-lg border border-zinc-200 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 transition hover:bg-zinc-50 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
+          联系我
+        </a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="border-t border-zinc-200 py-10 md:py-12 dark:border-white/5">
+      <h2 class="text-sm font-medium uppercase tracking-widest text-zinc-400 dark:text-zinc-500">About</h2>
+      <p class="mt-4 max-w-2xl text-base leading-7 text-zinc-600 md:text-lg md:leading-8 dark:text-zinc-300">
+        我是王现永，现于去哪儿担任酒店方向产品经理，熟悉供需匹配与业务增长。大学阶段系统学习过 C++ 与 Java，具备编程基础。正以 12 周计划转型 AI 时代产品工程师：用 AI 工具提升日常工作效率，并探索 AI+ 方向的创新产品，学习自 2026 年 5 月 27 日启动。本页是我的个人作品集首页，也是学习计划的第一份交付：单文件 HTML + Tailwind，支持深浅色切换，汇总自我介绍、12 周学习进度时间线与联系方式，随学习推进持续更新，记录从 PM 到 AI 产品工程师的演进过程。
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <span class="rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-sm text-indigo-700 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:text-indigo-300">酒店行业</span>
+        <span class="rounded-full border border-zinc-200 bg-zinc-100 px-4 py-1.5 text-sm text-zinc-700 dark:border-white/10 dark:bg-white/5 dark:text-zinc-300">产品经理</span>
+        <span class="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300">学编程的 PM</span>
+      </div>
+    </section>
+
+    <!-- Learning Progress -->
+    <section id="progress" class="border-t border-zinc-200 py-10 md:py-12 dark:border-white/5">
+      <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h2 class="text-sm font-medium uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Learning Progress</h2>
+          <p class="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">12 周 · 三阶段时间线</p>
+        </div>
+        <p class="text-sm text-zinc-500">2026-05-27 — 08-26 · 当前 W1 进行中 · 点击卡片查看每日计划</p>
+      </div>
+
+      <div class="mt-6 grid gap-3 sm:grid-cols-3">
+        <div class="rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-3 dark:border-indigo-500/20 dark:bg-indigo-500/5">
+          <p class="text-xs font-medium text-indigo-600 dark:text-indigo-400">P1 基础唤醒</p>
+          <p class="mt-1 text-xs text-zinc-500">W1–W4 · 交付：作品集主页</p>
+        </div>
+        <div class="rounded-lg border border-zinc-200 bg-white px-4 py-3 dark:border-white/5 dark:bg-white/[0.02]">
+          <p class="text-xs font-medium text-zinc-600 dark:text-zinc-400">P2 全栈能力</p>
+          <p class="mt-1 text-xs text-zinc-500">W5–W8 · 交付：可登录的小工具</p>
+        </div>
+        <div class="rounded-lg border border-zinc-200 bg-white px-4 py-3 dark:border-white/5 dark:bg-white/[0.02]">
+          <p class="text-xs font-medium text-zinc-600 dark:text-zinc-400">P3 副业 MVP</p>
+          <p class="mt-1 text-xs text-zinc-500">W9–W12 · 交付：可推广的产品</p>
+        </div>
+      </div>
+
+      <div id="week-grid" class="relative mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="border-t border-zinc-200 py-10 md:py-12 dark:border-white/5">
+      <h2 class="text-sm font-medium uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Contact</h2>
+      <p class="mt-3 text-zinc-500 dark:text-zinc-400">欢迎交流产品、AI 与学习心得。</p>
+      <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:gap-6">
+        <a href="mailto:foreva19940707@outlook.com" class="group flex items-center gap-4 rounded-xl border border-zinc-200 bg-white px-6 py-4 transition hover:border-zinc-300 hover:shadow-md dark:border-white/5 dark:bg-[#12121a] dark:hover:border-white/10 dark:hover:shadow-lg dark:hover:shadow-black/20">
+          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-100 text-zinc-500 transition group-hover:bg-indigo-50 group-hover:text-indigo-600 dark:bg-white/5 dark:text-zinc-400 dark:group-hover:bg-indigo-500/10 dark:group-hover:text-indigo-400">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </span>
+          <div>
+            <p class="text-xs text-zinc-400 dark:text-zinc-500">Email</p>
+            <p class="font-medium text-zinc-900 dark:text-white">foreva19940707@outlook.com</p>
+          </div>
+        </a>
+        <a href="https://github.com/foreva-gif" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 rounded-xl border border-zinc-200 bg-white px-6 py-4 transition hover:border-zinc-300 hover:shadow-md dark:border-white/5 dark:bg-[#12121a] dark:hover:border-white/10 dark:hover:shadow-lg dark:hover:shadow-black/20">
+          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-100 text-zinc-500 transition group-hover:bg-indigo-50 group-hover:text-indigo-600 dark:bg-white/5 dark:text-zinc-400 dark:group-hover:bg-indigo-500/10 dark:group-hover:text-indigo-400">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+          </span>
+          <div>
+            <p class="text-xs text-zinc-400 dark:text-zinc-500">GitHub</p>
+            <p class="font-medium text-zinc-900 dark:text-white">@foreva-gif</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-zinc-200 py-6 dark:border-white/5">
+    <p class="text-center text-xs text-zinc-400 dark:text-zinc-600">
+      © 2026 Xianyong Wang · Built with HTML & Tailwind
+    </p>
+  </footer>
+
+  <!-- Week detail modal -->
+  <div id="modal" class="hidden fixed inset-0 z-[100] items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div id="modal-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm dark:bg-black/60"></div>
+    <div class="relative flex max-h-[min(90vh,720px)] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#12121a]">
+      <div class="flex shrink-0 items-start justify-between gap-4 border-b border-zinc-200 px-5 py-4 dark:border-white/10 sm:px-6">
+        <div>
+          <p id="modal-phase" class="text-xs font-medium text-indigo-600 dark:text-indigo-400"></p>
+          <h2 id="modal-title" class="mt-1 text-lg font-semibold text-zinc-900 dark:text-white sm:text-xl"></h2>
+          <p id="modal-range" class="mt-1 text-xs text-zinc-500"></p>
+        </div>
+        <button id="modal-close" type="button" aria-label="关闭" class="shrink-0 rounded-lg p-2 text-zinc-400 transition hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-white/10 dark:hover:text-white">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="overflow-y-auto px-5 py-4 sm:px-6">
+        <p id="modal-goal" class="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400"></p>
+        <div class="overflow-x-auto rounded-lg border border-zinc-200 dark:border-white/10">
+          <table class="w-full min-w-[320px] text-left text-sm">
+            <thead>
+              <tr class="border-b border-zinc-200 bg-zinc-50 dark:border-white/10 dark:bg-white/5">
+                <th class="whitespace-nowrap px-4 py-2.5 font-medium text-zinc-600 dark:text-zinc-400">日期</th>
+                <th class="px-4 py-2.5 font-medium text-zinc-600 dark:text-zinc-400">学习内容</th>
+              </tr>
+            </thead>
+            <tbody id="modal-table-body" class="divide-y divide-zinc-100 dark:divide-white/5"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var WEEK_PLAN = {
+      1: {
+        phase: 'P1 基础唤醒',
+        title: '环境与 AI 工作流',
+        range: '5/27 — 6/2',
+        summary: 'Cursor / Claude Code、终端与 Git、静态页部署 Vercel、DevTools 基础',
+        goal: '让 AI 帮你写代码，你能看懂、能改、能上线',
+        active: true,
+        days: [
+          { date: '周三 5/27', content: '安装 Cursor + Claude Code；用 AI 跑通第一个 hello world；学会 Cmd+K / Cmd+L' },
+          { date: '周四 5/28', content: '终端基础：cd / ls / mkdir / cat / grep / man；学会用 AI 解释报错' },
+          { date: '周五 5/29', content: 'Git 三件套：clone / commit / push；注册 GitHub，建第一个仓库' },
+          { date: '周六 5/30', content: '实战：用 Claude Code 做一个静态个人介绍页，部署到 Vercel' },
+          { date: '周日 5/31', content: '复盘 + 写一篇 500 字总结发到飞书/Notion' },
+          { date: '周一 6/1', content: 'HTML 标签 30 个核心；浏览器 DevTools 基础（Elements）' },
+          { date: '周二 6/2', content: 'DevTools 继续：Network / Console；用 AI 解析一个真实网页结构' }
+        ]
+      },
+      2: {
+        phase: 'P1 基础唤醒',
+        title: 'CSS + 视觉直觉',
+        range: '6/3 — 6/9',
+        summary: 'Flexbox / Grid、Tailwind、响应式与动效；仿做酒店住中服务页面',
+        goal: '让 AI 帮你写代码，你能看懂、能改、能上线',
+        days: [
+          { date: '周三 6/3', content: 'Flexbox 基础：主轴、交叉轴、对齐' },
+          { date: '周四 6/4', content: 'Grid 布局：行、列、模板区域' },
+          { date: '周五 6/5', content: 'Tailwind CSS 安装 + 核心 class（间距、颜色、字号、布局）' },
+          { date: '周六 6/6', content: '实战：仿做酒店住中服务的一个页面（工作场景）' },
+          { date: '周日 6/7', content: '周报复盘 + 整理本周学到的 20 个 Tailwind class' },
+          { date: '周一 6/8', content: '响应式：sm/md/lg/xl 断点' },
+          { date: '周二 6/9', content: '动效：transition / animate；hover / focus 状态' }
+        ]
+      },
+      3: {
+        phase: 'P1 基础唤醒',
+        title: 'JavaScript 实用部分',
+        range: '6/10 — 6/16',
+        summary: '变量与数组方法、async/await、fetch 天气页、DOM 与 npm',
+        goal: '让 AI 帮你写代码，你能看懂、能改、能上线',
+        days: [
+          { date: '周三 6/10', content: '变量 / 函数 / 数组 / 对象（Java 基础迁移）' },
+          { date: '周四 6/11', content: '数组方法：map / filter / reduce / forEach' },
+          { date: '周五 6/12', content: '异步：Promise / async-await（新概念，重点）' },
+          { date: '周六 6/13', content: '实战：fetch API 调天气接口，做一个城市天气小页面' },
+          { date: '周日 6/14', content: '周报复盘' },
+          { date: '周一 6/15', content: 'DOM 操作 + 事件监听' },
+          { date: '周二 6/16', content: '模块化：import / export；npm 基础' }
+        ]
+      },
+      4: {
+        phase: 'P1 基础唤醒',
+        title: 'AI Coding 工作流深化',
+        range: '6/17 — 6/23',
+        summary: 'Prompt 工程、读懂 AI 代码、Plan 模式；作品集升级上线（P1 交付）',
+        goal: '让 AI 帮你写代码，你能看懂、能改、能上线',
+        days: [
+          { date: '周三 6/17', content: 'Prompt 工程：怎么给 Claude 提需求才能一次写对' },
+          { date: '周四 6/18', content: '阅读 AI 生成的代码：能看懂 70% 即可' },
+          { date: '周五 6/19', content: 'Claude Code Plan 模式 + TodoList 协作' },
+          { date: '周六 6/20', content: '实战：把第 1 周的个人页升级为带交互的作品集' },
+          { date: '周日 6/21', content: '周报 + 整理 P1 阶段总结' },
+          { date: '周一 6/22', content: '调试技巧：console.log / debugger / source map' },
+          { date: '周二 6/23', content: 'P1 交付：作品集上线，发到飞书签名档' }
+        ]
+      },
+      5: {
+        phase: 'P2 全栈能力',
+        title: 'React 心智模型',
+        range: '6/24 — 6/30',
+        summary: 'Vite、组件与 props、useState / useEffect；用 React 重写作品集',
+        goal: '能独立做出「有用户、有数据、能用」的产品',
+        days: [
+          { date: '周三 6/24', content: 'React 是什么 + create-react-app vs Vite 选型（用 Vite）' },
+          { date: '周四 6/25', content: '组件 / props / 函数式组件' },
+          { date: '周五 6/26', content: 'useState：状态管理基础' },
+          { date: '周六 6/27', content: '实战：把第 4 周的作品集用 React 重写一遍' },
+          { date: '周日 6/28', content: '周报' },
+          { date: '周一 6/29', content: 'useEffect：副作用与生命周期' },
+          { date: '周二 6/30', content: '列表渲染 / 条件渲染 / key 属性' }
+        ]
+      },
+      6: {
+        phase: 'P2 全栈能力',
+        title: 'Next.js + Tailwind',
+        range: '7/1 — 7/7',
+        summary: 'App Router、路由与 layout/page；酒店 PM 工具箱雏形；部署 Vercel',
+        goal: '能独立做出「有用户、有数据、能用」的产品',
+        days: [
+          { date: '周三 7/1', content: 'Next.js 14 App Router 心智模型' },
+          { date: '周四 7/2', content: '路由：file-based routing / dynamic routes' },
+          { date: '周五 7/3', content: 'layout.tsx / page.tsx / loading.tsx 三大文件' },
+          { date: '周六 7/4', content: '实战：做一个「酒店行业 PM 工具箱」小站雏形' },
+          { date: '周日 7/5', content: '周报' },
+          { date: '周一 7/6', content: 'Server Components vs Client Components' },
+          { date: '周二 7/7', content: '部署到 Vercel + 配置自定义域名' }
+        ]
+      },
+      7: {
+        phase: 'P2 全栈能力',
+        title: '数据库 + 认证',
+        range: '7/8 — 7/14',
+        summary: 'Supabase、SQL 基础、Auth 登录、RLS；工具箱用户系统与收藏',
+        goal: '能独立做出「有用户、有数据、能用」的产品',
+        days: [
+          { date: '周三 7/8', content: 'Supabase 入门：注册 + 创建项目' },
+          { date: '周四 7/9', content: 'SQL 基础：SELECT / WHERE / ORDER BY' },
+          { date: '周五 7/10', content: 'SQL 进阶：INSERT / UPDATE / DELETE / JOIN' },
+          { date: '周六 7/11', content: '实战：Supabase Auth 接入登录（Google / 邮箱）' },
+          { date: '周日 7/12', content: '周报' },
+          { date: '周一 7/13', content: 'Row Level Security（RLS）基础' },
+          { date: '周二 7/14', content: '给工具箱加用户系统 + 收藏功能' }
+        ]
+      },
+      8: {
+        phase: 'P2 全栈能力',
+        title: 'API 与第三方集成',
+        range: '7/15 — 7/21',
+        summary: 'REST、API Routes、Claude API；酒店评论 AI 摘要器（P2 交付）',
+        goal: '能独立做出「有用户、有数据、能用」的产品',
+        days: [
+          { date: '周三 7/15', content: 'REST API 设计基础：GET / POST / PUT / DELETE' },
+          { date: '周四 7/16', content: 'Next.js API Routes / Server Actions' },
+          { date: '周五 7/17', content: '调外部 API：OpenAI / Claude API' },
+          { date: '周六 7/18', content: '实战：做一个「酒店评论 AI 摘要器」或「竞品房型对比器」' },
+          { date: '周日 7/19', content: '周报' },
+          { date: '周一 7/20', content: '环境变量 + 密钥安全管理' },
+          { date: '周二 7/21', content: 'P2 交付：上线一个内部能用的小工具' }
+        ]
+      },
+      9: {
+        phase: 'P3 副业 MVP',
+        title: '选题与验证',
+        range: '7/22 — 7/28',
+        summary: 'idea 清单、竞品分析、一页纸 PRD、用户访谈、Figma / v0 原型',
+        goal: '上线一个真实有人用的产品',
+        days: [
+          { date: '周三 7/22', content: '列出 5-10 个候选 idea（基于你最熟悉的领域）' },
+          { date: '周四 7/23', content: '竞品分析（看 Product Hunt / 即刻 / 小红书）' },
+          { date: '周五 7/24', content: '选定 1 个 idea，写一页纸 PRD' },
+          { date: '周六 7/25', content: '用户访谈：找 3-5 个目标用户聊 30 分钟' },
+          { date: '周日 7/26', content: '周报 + 决定是否继续 / pivot' },
+          { date: '周一 7/27', content: '功能清单 → 砍到只剩 1 个核心功能' },
+          { date: '周二 7/28', content: '画 Figma / 用 v0.dev 出原型' }
+        ]
+      },
+      10: {
+        phase: 'P3 副业 MVP',
+        title: 'MVP 开发冲刺',
+        range: '7/29 — 8/4',
+        summary: 'Next.js + Supabase 搭框架、核心功能、登录与数据、MVP 上线',
+        goal: '上线一个真实有人用的产品',
+        days: [
+          { date: '周三 7/29', content: '搭框架：Next.js + Supabase + Tailwind' },
+          { date: '周四 7/30', content: '核心功能开发 Day 1' },
+          { date: '周五 7/31', content: '核心功能开发 Day 2' },
+          { date: '周六 8/1', content: '登录 + 数据持久化' },
+          { date: '周日 8/2', content: 'UI 打磨 + 移动端适配' },
+          { date: '周一 8/3', content: '部署 + 域名 + 配置' },
+          { date: '周二 8/4', content: 'MVP 上线（哪怕只有 1 个用户也要上线）' }
+        ]
+      },
+      11: {
+        phase: 'P3 副业 MVP',
+        title: '可观测性 + 付费',
+        range: '8/5 — 8/11',
+        summary: 'Plausible / Sentry、SEO、Stripe / 微信支付、用户反馈与邮件',
+        goal: '上线一个真实有人用的产品',
+        days: [
+          { date: '周三 8/5', content: '接入 Plausible / Umami（隐私友好的分析工具）' },
+          { date: '周四 8/6', content: 'Sentry 错误监控' },
+          { date: '周五 8/7', content: '基本 SEO：meta / sitemap / robots.txt' },
+          { date: '周六 8/8', content: '接入支付：Stripe（海外）或微信支付（国内）' },
+          { date: '周日 8/9', content: '周报' },
+          { date: '周一 8/10', content: '用户反馈收集机制：Crisp / Tally 表单' },
+          { date: '周二 8/11', content: '邮件营销：Resend + React Email' }
+        ]
+      },
+      12: {
+        phase: 'P3 副业 MVP',
+        title: '分发 + 毕业',
+        range: '8/12 — 8/26',
+        summary: '产品故事、即刻 / V2EX 推广、用户反馈迭代；08-26 P3 交付与复盘',
+        goal: '上线一个真实有人用的产品',
+        days: [
+          { date: '周三 8/12', content: '写产品故事：1500 字介绍 + 截图' },
+          { date: '周四 8/13', content: '发布到即刻 / V2EX / 小红书' },
+          { date: '周五 8/14', content: '（可选）Product Hunt 准备（海外向）' },
+          { date: '周六 8/15 — 周日 8/16', content: '收集前 20 个用户反馈' },
+          { date: '8/17 — 8/23', content: '根据反馈快速迭代 v1.1' },
+          { date: '8/24 — 8/25', content: '再次推广 + 数据复盘' },
+          { date: '8/26 毕业日', content: 'P3 交付：副业产品 + 完整复盘文档' }
+        ]
+      }
+    };
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function renderWeekCards() {
+      var grid = document.getElementById('week-grid');
+      var html = '';
+      for (var w = 1; w <= 12; w++) {
+        var plan = WEEK_PLAN[w];
+        var isActive = plan.active;
+        var phaseShort = plan.phase.split(' ')[0];
+        var baseCls = 'week-card group relative overflow-hidden rounded-xl border p-5 transition focus:outline-none ';
+        var cls = isActive
+          ? baseCls + 'border-indigo-300 bg-white shadow-lg shadow-indigo-500/10 hover:border-indigo-400 dark:border-indigo-500/40 dark:bg-[#12121a] dark:shadow-indigo-500/10 dark:hover:border-indigo-500/60'
+          : baseCls + 'border-zinc-200 bg-white hover:border-zinc-300 hover:shadow-md dark:border-white/5 dark:bg-[#12121a]/80 dark:hover:border-white/10 dark:hover:bg-[#12121a]';
+        var badge = isActive
+          ? '<span class="shrink-0 rounded-full bg-indigo-100 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300">进行中</span>'
+          : '<span class="text-[10px] text-zinc-400 dark:text-zinc-600">点击查看</span>';
+        var weekColor = isActive
+          ? 'text-indigo-600 dark:text-indigo-400'
+          : 'text-zinc-500';
+        var titleColor = isActive
+          ? 'text-zinc-900 dark:text-white'
+          : 'text-zinc-800 dark:text-zinc-200';
+        html += '<button type="button" class="' + cls + '" data-week="' + w + '" aria-label="查看第 ' + w + ' 周学习计划">';
+        if (isActive) html += '<div class="card-shine absolute inset-0 pointer-events-none"></div>';
+        html += '<div class="relative">';
+        html += '<div class="flex items-center justify-between gap-2">';
+        html += '<div class="flex items-center gap-2"><span class="font-mono text-xs font-semibold ' + weekColor + '">W' + w + '</span><span class="text-[10px] text-zinc-400 dark:text-zinc-600">' + phaseShort + '</span></div>';
+        html += badge;
+        html += '</div>';
+        html += '<h3 class="mt-3 font-medium ' + titleColor + '">' + escapeHtml(plan.title) + '</h3>';
+        html += '<p class="mt-1 text-xs text-zinc-500">' + escapeHtml(plan.range) + '</p>';
+        html += '<p class="mt-3 text-sm leading-relaxed text-zinc-500 dark:text-zinc-500">' + escapeHtml(plan.summary) + '</p>';
+        html += '</div></button>';
+      }
+      grid.innerHTML = html;
+      grid.querySelectorAll('.week-card').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          openModal(parseInt(btn.getAttribute('data-week'), 10));
+        });
+      });
+    }
+
+    var modal = document.getElementById('modal');
+    var modalBackdrop = document.getElementById('modal-backdrop');
+    var modalClose = document.getElementById('modal-close');
+
+    function openModal(week) {
+      var plan = WEEK_PLAN[week];
+      if (!plan) return;
+      document.getElementById('modal-phase').textContent = plan.phase + ' · 第 ' + week + ' 周';
+      document.getElementById('modal-title').textContent = plan.title;
+      document.getElementById('modal-range').textContent = plan.range;
+      document.getElementById('modal-goal').textContent = plan.goal ? '本周目标：' + plan.goal : '';
+      var tbody = document.getElementById('modal-table-body');
+      tbody.innerHTML = plan.days.map(function (day) {
+        return '<tr class="hover:bg-zinc-50 dark:hover:bg-white/[0.02]">' +
+          '<td class="whitespace-nowrap px-4 py-3 align-top font-medium text-zinc-700 dark:text-zinc-300">' + escapeHtml(day.date) + '</td>' +
+          '<td class="px-4 py-3 text-zinc-600 dark:text-zinc-400">' + escapeHtml(day.content) + '</td>' +
+          '</tr>';
+      }).join('');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      modalClose.focus();
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+    });
+
+    var themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', function () {
+      var html = document.documentElement;
+      var isDark = html.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    renderWeekCards();
+  </script>
+
+</body>
+</html>
