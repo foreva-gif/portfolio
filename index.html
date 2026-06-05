@@ -92,30 +92,32 @@
   <main class="mx-auto max-w-5xl px-6">
 
     <!-- Hero -->
-    <section id="hero" class="flex min-h-[50vh] flex-col justify-center py-12 md:py-16">
-      <header>
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath fill='%23ffffff' d='M16 7.5 9.5 10.8v12.4l6.5-3.2 6.5 3.2V10.8L16 7.5z'/%3E%3Cpath fill='%23ffffff' fill-opacity='.4' d='M16 7.5l6.5 3.3v12.4L16 20V7.5z'/%3E%3Cpath stroke='%236366f1' stroke-width='.8' d='M16 10v10'/%3E%3Ccircle cx='24.5' cy='7.5' r='2.8' fill='%2334d399'/%3E%3C/svg%3E" alt="foreva logo" class="sr-only" width="32" height="32" />
-        <p class="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs text-zinc-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-zinc-400 dark:shadow-none">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse dark:bg-emerald-400"></span>
-          12 周学习计划 · 自 2026-05-27
+    <section id="hero" class="flex flex-col items-center justify-center min-h-screen text-center">
+      <div class="flex flex-col items-center gap-3">
+        <header class="flex flex-col items-center gap-3">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath fill='%23ffffff' d='M16 7.5 9.5 10.8v12.4l6.5-3.2 6.5 3.2V10.8L16 7.5z'/%3E%3Cpath fill='%23ffffff' fill-opacity='.4' d='M16 7.5l6.5 3.3v12.4L16 20V7.5z'/%3E%3Cpath stroke='%236366f1' stroke-width='.8' d='M16 10v10'/%3E%3Ccircle cx='24.5' cy='7.5' r='2.8' fill='%2334d399'/%3E%3C/svg%3E" alt="foreva logo" class="sr-only" width="32" height="32" />
+          <p class="inline-flex w-fit items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs text-zinc-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-zinc-400 dark:shadow-none">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse dark:bg-emerald-400"></span>
+            12 周学习计划 · 自 2026-05-27
+          </p>
+          <h1 class="text-5xl font-bold tracking-tight text-zinc-900 sm:text-6xl md:text-7xl dark:text-white">
+            foreva
+          </h1>
+        </header>
+        <p class="max-w-xl text-lg text-zinc-600 sm:text-xl dark:text-zinc-400">
+          PM × AI 产品工程师 <span class="text-zinc-400 dark:text-zinc-500">学习中</span>
         </p>
-        <h1 class="text-5xl font-bold tracking-tight text-zinc-900 sm:text-6xl md:text-7xl dark:text-white">
-          foreva
-        </h1>
-      </header>
-      <p class="mt-4 max-w-xl text-lg text-zinc-600 sm:text-xl dark:text-zinc-400">
-        PM × AI 产品工程师 <span class="text-zinc-400 dark:text-zinc-500">学习中</span>
-      </p>
-      <p class="mt-6 max-w-lg text-sm leading-relaxed text-zinc-500">
-        去哪儿 · 酒店方向产品经理 · 目标 <span class="text-zinc-900 dark:text-white">AI 工程师</span>与 <span class="text-zinc-900 dark:text-white">AI+ 创新产品</span>
-      </p>
-      <div class="mt-10 flex flex-wrap gap-3">
-        <a href="#progress" class="rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-lg transition hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100">
-          查看学习进度
-        </a>
-        <a href="#contact" class="rounded-lg border border-zinc-200 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 transition hover:bg-zinc-50 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
-          联系我
-        </a>
+        <p class="max-w-lg text-sm leading-relaxed text-zinc-500">
+          去哪儿 · 酒店方向产品经理 · 目标 <span class="text-zinc-900 dark:text-white">AI 工程师</span>与 <span class="text-zinc-900 dark:text-white">AI+ 创新产品</span>
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="#progress" class="rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-lg transition hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100">
+            查看学习进度
+          </a>
+          <a href="#contact" class="rounded-lg border border-zinc-200 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 transition hover:bg-zinc-50 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
+            联系我
+          </a>
+        </div>
       </div>
     </section>
 
@@ -125,7 +127,7 @@
       <p class="mt-4 max-w-2xl text-base leading-7 text-zinc-600 md:text-lg md:leading-8 dark:text-zinc-300">
         我是 foreva，现于去哪儿担任酒店方向产品经理，熟悉供需匹配与业务增长。大学阶段系统学习过 C++ 与 Java，具备编程基础。正以 12 周计划转型 AI 时代产品工程师：用 AI 工具提升日常工作效率，并探索 AI+ 方向的创新产品，学习自 2026 年 5 月 27 日启动。本页是我的个人作品集首页，也是学习计划的第一份交付：单文件 HTML + Tailwind，支持深浅色切换，汇总自我介绍、12 周学习进度时间线与联系方式，随学习推进持续更新，记录从 PM 到 AI 产品工程师的演进过程。
       </p>
-      <div class="mt-6 flex flex-wrap gap-3">
+      <div class="mt-6 flex flex-row flex-wrap gap-3">
         <span class="rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-sm text-indigo-700 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:text-indigo-300">酒店行业</span>
         <span class="rounded-full border border-zinc-200 bg-zinc-100 px-4 py-1.5 text-sm text-zinc-700 dark:border-white/10 dark:bg-white/5 dark:text-zinc-300">产品经理</span>
         <span class="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300">学编程的 PM</span>
@@ -164,7 +166,7 @@
     <section id="contact" class="border-t border-zinc-200 py-10 md:py-12 dark:border-white/5">
       <h2 class="text-sm font-medium uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Contact</h2>
       <p class="mt-3 text-zinc-500 dark:text-zinc-400">欢迎交流产品、AI 与学习心得。</p>
-      <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:gap-6">
+      <div class="mt-6 flex flex-row flex-wrap items-center justify-between gap-3">
         <a href="mailto:foreva19940707@outlook.com" class="group flex items-center gap-4 rounded-xl border border-zinc-200 bg-white px-6 py-4 transition hover:border-zinc-300 hover:shadow-md dark:border-white/5 dark:bg-[#12121a] dark:hover:border-white/10 dark:hover:shadow-lg dark:hover:shadow-black/20">
           <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-100 text-zinc-500 transition group-hover:bg-indigo-50 group-hover:text-indigo-600 dark:bg-white/5 dark:text-zinc-400 dark:group-hover:bg-indigo-500/10 dark:group-hover:text-indigo-400">
             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
