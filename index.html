@@ -47,42 +47,42 @@
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
     }
     .hero-glow {
-      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent);
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.12), transparent);
     }
     html.dark .hero-glow {
-      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent);
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.15), transparent);
     }
     .card-shine {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, transparent 50%);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
     }
     html.dark .card-shine {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
     }
     .week-card { cursor: pointer; text-align: left; width: 100%; }
-    .week-card:focus-visible { outline: 2px solid rgb(99 102 241); outline-offset: 2px; }
+    .week-card:focus-visible { outline: 2px solid rgb(59 130 246); outline-offset: 2px; }
     #modal:not(.hidden) { display: flex; }
   </style>
 </head>
-<body class="bg-zinc-50 text-zinc-700 antialiased selection:bg-indigo-500/20 selection:text-indigo-900 dark:bg-[#0a0a0f] dark:text-zinc-300 dark:selection:bg-indigo-500/30 dark:selection:text-white">
+<body class="bg-gray-50 text-base leading-relaxed text-gray-700 antialiased selection:bg-blue-500/20 selection:text-blue-900 dark:bg-[#0a0a0f] dark:text-gray-300 dark:selection:bg-blue-500/30 dark:selection:text-white">
 
   <!-- Background -->
   <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-    <div class="absolute inset-0 bg-zinc-50 dark:bg-[#0a0a0f]"></div>
+    <div class="absolute inset-0 bg-gray-50 dark:bg-[#0a0a0f]"></div>
     <div class="absolute inset-0 opacity-[0.35] dark:opacity-[0.03]" style="background-image: linear-gradient(rgba(0,0,0,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.06) 1px, transparent 1px); background-size: 64px 64px;"></div>
     <div class="hero-glow absolute inset-0"></div>
   </div>
 
   <!-- Site header -->
-  <header class="sticky top-0 z-50 border-b border-zinc-200/80 bg-white/80 backdrop-blur-xl dark:border-white/5 dark:bg-[#0a0a0f]/80">
+  <header class="sticky top-0 z-50 border-b border-gray-200/80 bg-white/80 backdrop-blur-xl dark:border-white/5 dark:bg-[#0a0a0f]/80">
     <div class="mx-auto flex max-w-5xl items-center justify-end gap-4 px-6 py-4">
       <nav aria-label="主导航">
-        <div class="flex gap-6 text-sm text-zinc-500 dark:text-zinc-400">
-          <a href="#about" class="transition hover:text-zinc-900 dark:hover:text-white">About</a>
-          <a href="#progress" class="transition hover:text-zinc-900 dark:hover:text-white">Progress</a>
-          <a href="#contact" class="transition hover:text-zinc-900 dark:hover:text-white">Contact</a>
+        <div class="flex gap-6 text-sm text-gray-500 dark:text-gray-400">
+          <a href="#about" class="transition hover:text-blue-600 dark:hover:text-blue-400">About</a>
+          <a href="#progress" class="transition hover:text-blue-600 dark:hover:text-blue-400">Progress</a>
+          <a href="#contact" class="transition hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
         </div>
       </nav>
-      <button id="theme-toggle" type="button" aria-label="切换浅色/深色主题" class="flex h-9 w-9 items-center justify-center rounded-lg border border-zinc-200 bg-zinc-100 text-zinc-600 transition hover:bg-zinc-200 dark:border-white/10 dark:bg-white/5 dark:text-zinc-400 dark:hover:bg-white/10 dark:hover:text-white">
+      <button id="theme-toggle" type="button" aria-label="切换浅色/深色主题" class="flex h-9 w-9 items-center justify-center rounded-lg border border-gray-200 bg-gray-100 text-gray-600 transition hover:bg-gray-200 dark:border-white/10 dark:bg-white/5 dark:text-gray-400 dark:hover:bg-white/10 dark:hover:text-white">
         <svg id="icon-sun" class="hidden h-4 w-4 dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
         <svg id="icon-moon" class="h-4 w-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
       </button>
@@ -92,29 +92,29 @@
   <main class="mx-auto max-w-5xl px-6">
 
     <!-- Hero -->
-    <section id="hero" class="flex flex-col items-center justify-center min-h-screen text-center">
-      <div class="flex flex-col items-center gap-3">
-        <header class="flex flex-col items-center gap-3">
+    <section id="hero" class="flex min-h-screen flex-col items-center justify-center text-center">
+      <div class="flex flex-col items-center gap-6">
+        <header class="flex flex-col items-center gap-4">
           <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3Cpath fill='%23ffffff' d='M16 7.5 9.5 10.8v12.4l6.5-3.2 6.5 3.2V10.8L16 7.5z'/%3E%3Cpath fill='%23ffffff' fill-opacity='.4' d='M16 7.5l6.5 3.3v12.4L16 20V7.5z'/%3E%3Cpath stroke='%236366f1' stroke-width='.8' d='M16 10v10'/%3E%3Ccircle cx='24.5' cy='7.5' r='2.8' fill='%2334d399'/%3E%3C/svg%3E" alt="foreva logo" class="sr-only" width="32" height="32" />
-          <p class="inline-flex w-fit items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs text-zinc-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-zinc-400 dark:shadow-none">
-            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse dark:bg-emerald-400"></span>
+          <p class="inline-flex w-fit items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1 text-sm text-gray-500 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-gray-400 dark:shadow-none">
+            <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-blue-500 dark:bg-blue-400"></span>
             12 周学习计划 · 自 2026-05-27
           </p>
-          <h1 class="text-5xl font-bold tracking-tight text-zinc-900 sm:text-6xl md:text-7xl dark:text-white">
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 md:text-6xl dark:text-white">
             foreva
           </h1>
         </header>
-        <p class="max-w-xl text-lg text-zinc-600 sm:text-xl dark:text-zinc-400">
-          PM × AI 产品工程师 <span class="text-zinc-400 dark:text-zinc-500">学习中</span>
+        <p class="max-w-xl text-base leading-relaxed text-gray-700 dark:text-gray-300">
+          PM × AI 产品工程师 <span class="text-gray-500 dark:text-gray-400">学习中</span>
         </p>
-        <p class="max-w-lg text-sm leading-relaxed text-zinc-500">
-          去哪儿 · 酒店方向产品经理 · 目标 <span class="text-zinc-900 dark:text-white">AI 工程师</span>与 <span class="text-zinc-900 dark:text-white">AI+ 创新产品</span>
+        <p class="max-w-lg text-sm text-gray-500">
+          去哪儿 · 酒店方向产品经理 · 目标 <span class="text-gray-900 dark:text-white">AI 工程师</span>与 <span class="text-gray-900 dark:text-white">AI+ 创新产品</span>
         </p>
-        <div class="flex flex-wrap justify-center gap-3">
-          <a href="#progress" class="rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white shadow-lg transition hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100">
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#progress" class="rounded-lg bg-blue-500 px-5 py-2.5 text-sm font-medium text-white shadow-lg transition hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-600">
             查看学习进度
           </a>
-          <a href="#contact" class="rounded-lg border border-zinc-200 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 transition hover:bg-zinc-50 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
+          <a href="#contact" class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 transition hover:text-blue-600 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:text-blue-400">
             联系我
           </a>
         </div>
@@ -122,104 +122,104 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="border-t border-zinc-200 py-10 md:py-12 dark:border-white/5">
-      <h2 class="text-sm font-medium uppercase tracking-widest text-zinc-400 dark:text-zinc-500">About</h2>
-      <p class="mt-4 max-w-2xl text-base leading-7 text-zinc-600 md:text-lg md:leading-8 dark:text-zinc-300">
+    <section id="about" class="border-t border-gray-200 py-16 md:py-24 dark:border-white/5">
+      <h2 class="text-3xl font-semibold text-gray-800 dark:text-white">About</h2>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-gray-700 dark:text-gray-300">
         我是 foreva，现于去哪儿担任酒店方向产品经理，熟悉供需匹配与业务增长。大学阶段系统学习过 C++ 与 Java，具备编程基础。正以 12 周计划转型 AI 时代产品工程师：用 AI 工具提升日常工作效率，并探索 AI+ 方向的创新产品，学习自 2026 年 5 月 27 日启动。本页是我的个人作品集首页，也是学习计划的第一份交付：单文件 HTML + Tailwind，支持深浅色切换，汇总自我介绍、12 周学习进度时间线与联系方式，随学习推进持续更新，记录从 PM 到 AI 产品工程师的演进过程。
       </p>
-      <div class="mt-6 flex flex-row flex-wrap gap-3">
-        <span class="rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-sm text-indigo-700 dark:border-indigo-500/20 dark:bg-indigo-500/10 dark:text-indigo-300">酒店行业</span>
-        <span class="rounded-full border border-zinc-200 bg-zinc-100 px-4 py-1.5 text-sm text-zinc-700 dark:border-white/10 dark:bg-white/5 dark:text-zinc-300">产品经理</span>
-        <span class="rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300">学编程的 PM</span>
+      <div class="mt-6 flex flex-col flex-wrap gap-4 md:flex-row">
+        <span class="rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-sm text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300">酒店行业</span>
+        <span class="rounded-full border border-gray-200 bg-gray-100 px-4 py-1.5 text-sm text-gray-700 dark:border-white/10 dark:bg-white/5 dark:text-gray-300">产品经理</span>
+        <span class="rounded-full border border-blue-100 bg-blue-50/80 px-4 py-1.5 text-sm text-blue-600 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300">学编程的 PM</span>
       </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="border-t border-zinc-200 py-10 md:py-12 dark:border-white/5">
-      <h2 class="text-center text-2xl font-semibold text-gray-900 dark:text-white">我的探索</h2>
+    <section id="projects" class="border-t border-gray-200 py-16 md:py-24 dark:border-white/5">
+      <h2 class="text-center text-3xl font-semibold text-gray-800 dark:text-white">我的探索</h2>
       <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <article class="rounded-xl border border-transparent bg-white p-6 shadow-md transition hover:shadow-xl dark:border-white/5 dark:bg-[#12121a] dark:hover:shadow-lg dark:hover:shadow-black/20 md:col-span-2 lg:col-span-2">
           <p class="text-3xl" aria-hidden="true">🎓</p>
-          <h3 class="mt-3 text-lg font-semibold text-zinc-900 dark:text-white">AI 产品工程师集训</h3>
-          <p class="mt-2 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">12 周系统学习，从 PM 到 AI 产品工程师的公开实战记录。</p>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">AI 产品工程师集训</h3>
+          <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">12 周系统学习，从 PM 到 AI 产品工程师的公开实战记录。</p>
         </article>
         <article class="rounded-xl border border-transparent bg-white p-6 shadow-md transition hover:shadow-xl dark:border-white/5 dark:bg-[#12121a] dark:hover:shadow-lg dark:hover:shadow-black/20">
           <p class="text-3xl" aria-hidden="true">🏨</p>
-          <h3 class="mt-3 text-lg font-semibold text-zinc-900 dark:text-white">酒店住中服务 Demo</h3>
-          <p class="mt-2 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">仿真实场景的前端页面，探索住中服务产品设计。</p>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">酒店住中服务 Demo</h3>
+          <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">仿真实场景的前端页面，探索住中服务产品设计。</p>
         </article>
         <article class="rounded-xl border border-transparent bg-white p-6 shadow-md transition hover:shadow-xl dark:border-white/5 dark:bg-[#12121a] dark:hover:shadow-lg dark:hover:shadow-black/20">
           <p class="text-3xl" aria-hidden="true">📊</p>
-          <h3 class="mt-3 text-lg font-semibold text-zinc-900 dark:text-white">竞品分析工具</h3>
-          <p class="mt-2 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">快速对比竞品房型与价格的小型分析工具。</p>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">竞品分析工具</h3>
+          <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">快速对比竞品房型与价格的小型分析工具。</p>
         </article>
         <article class="rounded-xl border border-transparent bg-white p-6 shadow-md transition hover:shadow-xl dark:border-white/5 dark:bg-[#12121a] dark:hover:shadow-lg dark:hover:shadow-black/20">
           <p class="text-3xl" aria-hidden="true">🎨</p>
-          <h3 class="mt-3 text-lg font-semibold text-zinc-900 dark:text-white">个人作品集 v2</h3>
-          <p class="mt-2 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">用 React 重写的交互式作品集站点。</p>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">个人作品集 v2</h3>
+          <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">用 React 重写的交互式作品集站点。</p>
         </article>
         <article class="rounded-xl border border-transparent bg-white p-6 shadow-md transition hover:shadow-xl dark:border-white/5 dark:bg-[#12121a] dark:hover:shadow-lg dark:hover:shadow-black/20">
           <p class="text-3xl" aria-hidden="true">🚀</p>
-          <h3 class="mt-3 text-lg font-semibold text-zinc-900 dark:text-white">RMS MVP</h3>
-          <p class="mt-2 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">收益管理系统最小可行产品原型。</p>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">RMS MVP</h3>
+          <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">收益管理系统最小可行产品原型。</p>
         </article>
         <article class="rounded-xl border border-transparent bg-white p-6 shadow-md transition hover:shadow-xl dark:border-white/5 dark:bg-[#12121a] dark:hover:shadow-lg dark:hover:shadow-black/20">
           <p class="text-3xl" aria-hidden="true">💡</p>
-          <h3 class="mt-3 text-lg font-semibold text-zinc-900 dark:text-white">PM 实用工具箱</h3>
-          <p class="mt-2 text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">面向酒店 PM 的常用工具与模板集合。</p>
+          <h3 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">PM 实用工具箱</h3>
+          <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">面向酒店 PM 的常用工具与模板集合。</p>
         </article>
       </div>
     </section>
 
     <!-- Learning Progress -->
-    <section id="progress" class="border-t border-zinc-200 py-10 md:py-12 dark:border-white/5">
-      <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+    <section id="progress" class="border-t border-gray-200 py-16 md:py-24 dark:border-white/5">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 class="text-sm font-medium uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Learning Progress</h2>
-          <p class="mt-2 text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white">12 周 · 三阶段时间线</p>
+          <h2 class="text-3xl font-semibold text-gray-800 dark:text-white">Learning Progress</h2>
+          <p class="mt-2 text-base leading-relaxed text-gray-700 dark:text-gray-300">12 周 · 三阶段时间线</p>
         </div>
-        <p class="text-sm text-zinc-500">2026-05-27 — 08-26 · 当前 W1 进行中 · 点击卡片查看每日计划</p>
+        <p class="text-sm text-gray-500">2026-05-27 — 08-26 · 当前 W1 进行中 · 点击卡片查看每日计划</p>
       </div>
 
-      <div class="mt-6 grid gap-3 sm:grid-cols-3">
-        <div class="rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-3 dark:border-indigo-500/20 dark:bg-indigo-500/5">
-          <p class="text-xs font-medium text-indigo-600 dark:text-indigo-400">P1 基础唤醒</p>
-          <p class="mt-1 text-xs text-zinc-500">W1–W4 · 交付：作品集主页</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-lg border border-blue-200 bg-blue-50 p-6 dark:border-blue-500/20 dark:bg-blue-500/5">
+          <p class="text-sm font-medium text-blue-600 dark:text-blue-400">P1 基础唤醒</p>
+          <p class="mt-1 text-sm text-gray-500">W1–W4 · 交付：作品集主页</p>
         </div>
-        <div class="rounded-lg border border-zinc-200 bg-white px-4 py-3 dark:border-white/5 dark:bg-white/[0.02]">
-          <p class="text-xs font-medium text-zinc-600 dark:text-zinc-400">P2 全栈能力</p>
-          <p class="mt-1 text-xs text-zinc-500">W5–W8 · 交付：可登录的小工具</p>
+        <div class="rounded-lg border border-gray-200 bg-white p-6 dark:border-white/5 dark:bg-white/[0.02]">
+          <p class="text-sm font-medium text-gray-700 dark:text-gray-300">P2 全栈能力</p>
+          <p class="mt-1 text-sm text-gray-500">W5–W8 · 交付：可登录的小工具</p>
         </div>
-        <div class="rounded-lg border border-zinc-200 bg-white px-4 py-3 dark:border-white/5 dark:bg-white/[0.02]">
-          <p class="text-xs font-medium text-zinc-600 dark:text-zinc-400">P3 副业 MVP</p>
-          <p class="mt-1 text-xs text-zinc-500">W9–W12 · 交付：可推广的产品</p>
+        <div class="rounded-lg border border-gray-200 bg-white p-6 dark:border-white/5 dark:bg-white/[0.02]">
+          <p class="text-sm font-medium text-gray-700 dark:text-gray-300">P3 副业 MVP</p>
+          <p class="mt-1 text-sm text-gray-500">W9–W12 · 交付：可推广的产品</p>
         </div>
       </div>
 
-      <div id="week-grid" class="relative mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+      <div id="week-grid" class="relative mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="border-t border-zinc-200 py-10 md:py-12 dark:border-white/5">
-      <h2 class="text-sm font-medium uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Contact</h2>
-      <p class="mt-3 text-zinc-500 dark:text-zinc-400">欢迎交流产品、AI 与学习心得。</p>
-      <div class="mt-6 flex flex-row flex-wrap items-center justify-between gap-3">
-        <a href="mailto:foreva19940707@outlook.com" class="group flex items-center gap-4 rounded-xl border border-zinc-200 bg-white px-6 py-4 transition hover:border-zinc-300 hover:shadow-md dark:border-white/5 dark:bg-[#12121a] dark:hover:border-white/10 dark:hover:shadow-lg dark:hover:shadow-black/20">
-          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-100 text-zinc-500 transition group-hover:bg-indigo-50 group-hover:text-indigo-600 dark:bg-white/5 dark:text-zinc-400 dark:group-hover:bg-indigo-500/10 dark:group-hover:text-indigo-400">
+    <section id="contact" class="border-t border-gray-200 py-16 md:py-24 dark:border-white/5">
+      <h2 class="text-3xl font-semibold text-gray-800 dark:text-white">Contact</h2>
+      <p class="mt-4 text-base leading-relaxed text-gray-700 dark:text-gray-300">欢迎交流产品、AI 与学习心得。</p>
+      <div class="mt-6 flex flex-row flex-wrap items-center justify-between gap-4">
+        <a href="mailto:foreva19940707@outlook.com" class="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-6 transition hover:border-blue-200 hover:shadow-md dark:border-white/5 dark:bg-[#12121a] dark:hover:border-blue-500/30 dark:hover:shadow-lg dark:hover:shadow-black/20">
+          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-gray-500 transition group-hover:bg-blue-50 group-hover:text-blue-600 dark:bg-white/5 dark:text-gray-400 dark:group-hover:bg-blue-500/10 dark:group-hover:text-blue-400">
             <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
           </span>
           <div>
-            <p class="text-xs text-zinc-400 dark:text-zinc-500">Email</p>
-            <p class="font-medium text-zinc-900 dark:text-white">foreva19940707@outlook.com</p>
+            <p class="text-sm text-gray-500">Email</p>
+            <p class="font-medium text-gray-900 transition group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">foreva19940707@outlook.com</p>
           </div>
         </a>
-        <a href="https://github.com/foreva-gif" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 rounded-xl border border-zinc-200 bg-white px-6 py-4 transition hover:border-zinc-300 hover:shadow-md dark:border-white/5 dark:bg-[#12121a] dark:hover:border-white/10 dark:hover:shadow-lg dark:hover:shadow-black/20">
-          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-100 text-zinc-500 transition group-hover:bg-indigo-50 group-hover:text-indigo-600 dark:bg-white/5 dark:text-zinc-400 dark:group-hover:bg-indigo-500/10 dark:group-hover:text-indigo-400">
+        <a href="https://github.com/foreva-gif" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-6 transition hover:border-blue-200 hover:shadow-md dark:border-white/5 dark:bg-[#12121a] dark:hover:border-blue-500/30 dark:hover:shadow-lg dark:hover:shadow-black/20">
+          <span class="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-100 text-gray-500 transition group-hover:bg-blue-50 group-hover:text-blue-600 dark:bg-white/5 dark:text-gray-400 dark:group-hover:bg-blue-500/10 dark:group-hover:text-blue-400">
             <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
           </span>
           <div>
-            <p class="text-xs text-zinc-400 dark:text-zinc-500">GitHub</p>
-            <p class="font-medium text-zinc-900 dark:text-white">@foreva-gif</p>
+            <p class="text-sm text-gray-500">GitHub</p>
+            <p class="font-medium text-gray-900 transition group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">@foreva-gif</p>
           </div>
         </a>
       </div>
@@ -227,8 +227,8 @@
 
   </main>
 
-  <footer class="border-t border-zinc-200 py-6 dark:border-white/5">
-    <p class="text-center text-xs text-zinc-400 dark:text-zinc-600">
+  <footer class="border-t border-gray-200 py-6 dark:border-white/5">
+    <p class="text-center text-sm text-gray-500 dark:text-gray-600">
       © 2026 foreva · Built with HTML & Tailwind
     </p>
   </footer>
@@ -236,28 +236,28 @@
   <!-- Week detail modal -->
   <div id="modal" class="hidden fixed inset-0 z-[100] items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div id="modal-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm dark:bg-black/60"></div>
-    <div class="relative flex max-h-[min(90vh,720px)] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#12121a]">
-      <div class="flex shrink-0 items-start justify-between gap-4 border-b border-zinc-200 px-5 py-4 dark:border-white/10 sm:px-6">
+    <div class="relative flex max-h-[min(90vh,720px)] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#12121a]">
+      <div class="flex shrink-0 items-start justify-between gap-4 border-b border-gray-200 px-6 py-4 dark:border-white/10">
         <div>
-          <p id="modal-phase" class="text-xs font-medium text-indigo-600 dark:text-indigo-400"></p>
-          <h2 id="modal-title" class="mt-1 text-lg font-semibold text-zinc-900 dark:text-white sm:text-xl"></h2>
-          <p id="modal-range" class="mt-1 text-xs text-zinc-500"></p>
+          <p id="modal-phase" class="text-sm font-medium text-blue-600 dark:text-blue-400"></p>
+          <h2 id="modal-title" class="mt-1 text-3xl font-semibold text-gray-800 dark:text-white"></h2>
+          <p id="modal-range" class="mt-1 text-sm text-gray-500"></p>
         </div>
-        <button id="modal-close" type="button" aria-label="关闭" class="shrink-0 rounded-lg p-2 text-zinc-400 transition hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-white/10 dark:hover:text-white">
+        <button id="modal-close" type="button" aria-label="关闭" class="shrink-0 rounded-lg p-2 text-gray-400 transition hover:bg-gray-100 hover:text-gray-700 dark:hover:bg-white/10 dark:hover:text-white">
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
-      <div class="overflow-y-auto px-5 py-4 sm:px-6">
-        <p id="modal-goal" class="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400"></p>
-        <div class="overflow-x-auto rounded-lg border border-zinc-200 dark:border-white/10">
+      <div class="overflow-y-auto p-6">
+        <p id="modal-goal" class="mb-4 text-base leading-relaxed text-gray-700 dark:text-gray-300"></p>
+        <div class="overflow-x-auto rounded-lg border border-gray-200 dark:border-white/10">
           <table class="w-full min-w-[320px] text-left text-sm">
             <thead>
-              <tr class="border-b border-zinc-200 bg-zinc-50 dark:border-white/10 dark:bg-white/5">
-                <th class="whitespace-nowrap px-4 py-2.5 font-medium text-zinc-600 dark:text-zinc-400">日期</th>
-                <th class="px-4 py-2.5 font-medium text-zinc-600 dark:text-zinc-400">学习内容</th>
+              <tr class="border-b border-gray-200 bg-gray-50 dark:border-white/10 dark:bg-white/5">
+                <th class="whitespace-nowrap px-4 py-2.5 font-medium text-gray-600 dark:text-gray-400">日期</th>
+                <th class="px-4 py-2.5 font-medium text-gray-600 dark:text-gray-400">学习内容</th>
               </tr>
             </thead>
-            <tbody id="modal-table-body" class="divide-y divide-zinc-100 dark:divide-white/5"></tbody>
+            <tbody id="modal-table-body" class="divide-y divide-gray-100 dark:divide-white/5"></tbody>
           </table>
         </div>
       </div>
@@ -476,29 +476,29 @@
         var plan = WEEK_PLAN[w];
         var isActive = plan.active;
         var phaseShort = plan.phase.split(' ')[0];
-        var baseCls = 'week-card group relative overflow-hidden rounded-xl border p-5 transition focus:outline-none ';
+        var baseCls = 'week-card group relative overflow-hidden rounded-xl border p-6 transition focus:outline-none ';
         var cls = isActive
-          ? baseCls + 'border-indigo-300 bg-white shadow-lg shadow-indigo-500/10 hover:border-indigo-400 dark:border-indigo-500/40 dark:bg-[#12121a] dark:shadow-indigo-500/10 dark:hover:border-indigo-500/60'
-          : baseCls + 'border-zinc-200 bg-white hover:border-zinc-300 hover:shadow-md dark:border-white/5 dark:bg-[#12121a]/80 dark:hover:border-white/10 dark:hover:bg-[#12121a]';
+          ? baseCls + 'border-blue-300 bg-white shadow-lg shadow-blue-500/10 hover:border-blue-400 dark:border-blue-500/40 dark:bg-[#12121a] dark:shadow-blue-500/10 dark:hover:border-blue-500/60'
+          : baseCls + 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-md dark:border-white/5 dark:bg-[#12121a]/80 dark:hover:border-white/10 dark:hover:bg-[#12121a]';
         var badge = isActive
-          ? '<span class="shrink-0 rounded-full bg-indigo-100 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-indigo-700 dark:bg-indigo-500/20 dark:text-indigo-300">进行中</span>'
-          : '<span class="text-[10px] text-zinc-400 dark:text-zinc-600">点击查看</span>';
+          ? '<span class="shrink-0 rounded-full bg-blue-100 px-2 py-0.5 text-sm font-medium uppercase tracking-wide text-blue-700 dark:bg-blue-500/20 dark:text-blue-300">进行中</span>'
+          : '<span class="text-sm text-gray-500 dark:text-gray-600">点击查看</span>';
         var weekColor = isActive
-          ? 'text-indigo-600 dark:text-indigo-400'
-          : 'text-zinc-500';
+          ? 'text-blue-600 dark:text-blue-400'
+          : 'text-gray-500';
         var titleColor = isActive
-          ? 'text-zinc-900 dark:text-white'
-          : 'text-zinc-800 dark:text-zinc-200';
+          ? 'text-gray-900 dark:text-white'
+          : 'text-gray-800 dark:text-gray-200';
         html += '<button type="button" class="' + cls + '" data-week="' + w + '" aria-label="查看第 ' + w + ' 周学习计划">';
         if (isActive) html += '<div class="card-shine absolute inset-0 pointer-events-none"></div>';
         html += '<div class="relative">';
-        html += '<div class="flex items-center justify-between gap-2">';
-        html += '<div class="flex items-center gap-2"><span class="font-mono text-xs font-semibold ' + weekColor + '">W' + w + '</span><span class="text-[10px] text-zinc-400 dark:text-zinc-600">' + phaseShort + '</span></div>';
+        html += '<div class="flex items-center justify-between gap-4">';
+        html += '<div class="flex items-center gap-2"><span class="font-mono text-sm font-semibold ' + weekColor + '">W' + w + '</span><span class="text-sm text-gray-500 dark:text-gray-600">' + phaseShort + '</span></div>';
         html += badge;
         html += '</div>';
-        html += '<h3 class="mt-3 font-medium ' + titleColor + '">' + escapeHtml(plan.title) + '</h3>';
-        html += '<p class="mt-1 text-xs text-zinc-500">' + escapeHtml(plan.range) + '</p>';
-        html += '<p class="mt-3 text-sm leading-relaxed text-zinc-500 dark:text-zinc-500">' + escapeHtml(plan.summary) + '</p>';
+        html += '<h3 class="mt-4 font-medium ' + titleColor + '">' + escapeHtml(plan.title) + '</h3>';
+        html += '<p class="mt-1 text-sm text-gray-500">' + escapeHtml(plan.range) + '</p>';
+        html += '<p class="mt-4 text-sm leading-relaxed text-gray-500 dark:text-gray-400">' + escapeHtml(plan.summary) + '</p>';
         html += '</div></button>';
       }
       grid.innerHTML = html;
@@ -522,9 +522,9 @@
       document.getElementById('modal-goal').textContent = plan.goal ? '本周目标：' + plan.goal : '';
       var tbody = document.getElementById('modal-table-body');
       tbody.innerHTML = plan.days.map(function (day) {
-        return '<tr class="hover:bg-zinc-50 dark:hover:bg-white/[0.02]">' +
-          '<td class="whitespace-nowrap px-4 py-3 align-top font-medium text-zinc-700 dark:text-zinc-300">' + escapeHtml(day.date) + '</td>' +
-          '<td class="px-4 py-3 text-zinc-600 dark:text-zinc-400">' + escapeHtml(day.content) + '</td>' +
+        return '<tr class="hover:bg-gray-50 dark:hover:bg-white/[0.02]">' +
+          '<td class="whitespace-nowrap px-4 py-3 align-top font-medium text-gray-700 dark:text-gray-300">' + escapeHtml(day.date) + '</td>' +
+          '<td class="px-4 py-3 text-base leading-relaxed text-gray-700 dark:text-gray-300">' + escapeHtml(day.content) + '</td>' +
           '</tr>';
       }).join('');
       modal.classList.remove('hidden');
